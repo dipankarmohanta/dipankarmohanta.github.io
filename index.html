@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<title>Dipankar Mohanta — Web Designer · Software Developer · Digital Marketer</title>
+<title>Er. Dipankar Mohanta — Web Designer · Software Developer · Digital Marketer</title>
 <meta name="description" content="Dipankar Mohanta — Software Engineer turned Digital Marketer, helping entrepreneurs across the globe build software, websites and brands.">
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -185,8 +185,10 @@
 
     <div class="filter-bar reveal">
       <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="software">Software</button>
       <button class="filter-btn" data-filter="website">Website</button>
+      <button class="filter-btn" data-filter="software">Software</button>
+      <button class="filter-btn" data-filter="android">Android</button>
+      <button class="filter-btn" data-filter="windows">Windows</button>
       <button class="filter-btn" data-filter="project">Project</button>
     </div>
 
@@ -264,6 +266,56 @@
         <p>eCommerce website</p>
       </article>
 
+      <!-- ANDROID APPS — replace name / link / description with your real app details -->
+      <article class="p-card reveal" data-cat="android">
+        <a href="#" target="_blank" rel="noopener" class="p-thumb p-thumb--10">
+          <span class="platform-badge">
+            <svg viewBox="0 0 24 24"><path d="M6.3 8.4 4.1 5a.6.6 0 0 1 1-.7L7.5 7.8a10 10 0 0 1 9 0l2.4-3.5a.6.6 0 0 1 1 .7l-2.2 3.4A8.4 8.4 0 0 1 21.5 15H2.5a8.4 8.4 0 0 1 3.8-6.6zM7.8 12a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm8.4 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/></svg>
+            Google Play
+          </span>
+          <span class="p-mark">01</span>
+        </a>
+        <h4>Your Android App Name</h4>
+        <p>Add a short description + Play Store link</p>
+      </article>
+
+      <article class="p-card reveal" data-cat="android">
+        <a href="#" target="_blank" rel="noopener" class="p-thumb p-thumb--11">
+          <span class="platform-badge">
+            <svg viewBox="0 0 24 24"><path d="M6.3 8.4 4.1 5a.6.6 0 0 1 1-.7L7.5 7.8a10 10 0 0 1 9 0l2.4-3.5a.6.6 0 0 1 1 .7l-2.2 3.4A8.4 8.4 0 0 1 21.5 15H2.5a8.4 8.4 0 0 1 3.8-6.6zM7.8 12a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm8.4 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/></svg>
+            Google Play
+          </span>
+          <span class="p-mark">02</span>
+        </a>
+        <h4>Your Android App Name</h4>
+        <p>Add a short description + Play Store link</p>
+      </article>
+
+      <!-- WINDOWS APPS — replace name / link / description with your real app details -->
+      <article class="p-card reveal" data-cat="windows">
+        <a href="#" target="_blank" rel="noopener" class="p-thumb p-thumb--12">
+          <span class="platform-badge">
+            <svg viewBox="0 0 24 24"><path d="M3 5.1 10 4v7.6H3V5.1zm8-1.2 9-1.3v9H11V3.9zM3 12.6h7v7.5l-7-1V12.6zm8 0h9v9L11 20v-7.4z"/></svg>
+            Windows
+          </span>
+          <span class="p-mark">01</span>
+        </a>
+        <h4>Your Windows App Name</h4>
+        <p>Add a short description + download link</p>
+      </article>
+
+      <article class="p-card reveal" data-cat="windows">
+        <a href="#" target="_blank" rel="noopener" class="p-thumb p-thumb--13">
+          <span class="platform-badge">
+            <svg viewBox="0 0 24 24"><path d="M3 5.1 10 4v7.6H3V5.1zm8-1.2 9-1.3v9H11V3.9zM3 12.6h7v7.5l-7-1V12.6zm8 0h9v9L11 20v-7.4z"/></svg>
+            Windows
+          </span>
+          <span class="p-mark">02</span>
+        </a>
+        <h4>Your Windows App Name</h4>
+        <p>Add a short description + download link</p>
+      </article>
+
     </div>
   </section>
 
@@ -274,6 +326,7 @@
         <p class="eyebrow">// contact</p>
         <h2>Let's build something.</h2>
         <p class="section-lead">Have a project in mind, or just want to say hello? Send a note — I read every message.</p>
+        <p class="contact-direct">Prefer email? Write to <a href="mailto:contact@dipankarmohanta.com">contact@dipankarmohanta.com</a></p>
 
         <ul class="social-list">
           <li>
@@ -309,7 +362,14 @@
         </ul>
       </div>
 
-      <form class="contact-form reveal" id="contactForm" novalidate>
+      <form class="contact-form reveal" id="contactForm" action="https://formsubmit.co/contact@dipankarmohanta.com" method="POST" novalidate>
+        <!-- FormSubmit settings: plain email, no captcha page, custom subject -->
+        <input type="hidden" name="_subject" value="New message from dipankarmohanta.com">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <!-- honeypot field to trap spam bots -->
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
         <div class="form-row">
           <label for="name">Name</label>
           <input id="name" name="name" type="text" placeholder="Your name" required>
@@ -322,7 +382,7 @@
           <label for="message">Message</label>
           <textarea id="message" name="message" rows="4" placeholder="Tell me about your project" required></textarea>
         </div>
-        <button type="submit" class="btn btn-primary btn-block">Send message</button>
+        <button type="submit" class="btn btn-primary btn-block" id="formSubmitBtn">Send message</button>
         <p class="form-note" id="formNote" role="status"></p>
       </form>
     </div>
@@ -334,7 +394,7 @@
   <div class="footer-inner">
     <div class="footer-brand">Er. Dipankar Mohanta<span>.</span></div>
     <p>Web Designer · Software Developer · Network Engineer · Digital Marketer · YouTuber</p>
-    <p class="footer-copy">© <span id="year"></span>Er. Dipankar Mohanta..</p>
+    <p class="footer-copy">© <span id="year"></span> Dipankar Mohanta..</p>
   </div>
 </footer>
 
