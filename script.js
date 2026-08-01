@@ -164,15 +164,56 @@
   window.addEventListener("resize", updateSpine);
 
   /* ----------------------------------------------------------
-     Contact form (static demo — no backend)
+     Contact form — sends to contact@dipankarmohanta.com via
+     FormSubmit (https://formsubmit.co), no backend required.
+     NOTE: the very first message sent from this form triggers a
+     one-time "activate your form" confirmation email from
+     FormSubmit to contact@dipankarmohanta.com — click the link in
+     that email once, and every submission after is delivered
+     straight to the inbox.
   ---------------------------------------------------------- */
   var form = document.getElementById("contactForm");
   var note = document.getElementById("formNote");
+  var submitBtn = document.getElementById("formSubmitBtn");
+
   if (form){
     form.addEventListener("submit", function(e){
       e.preventDefault();
-      note.textContent = "Thanks — your message is ready to send once this form is connected to a backend or form service.";
-      form.reset();
+
+      // honeypot: if filled, silently drop (bot)
+      if (form._honey && form._honey.value){
+        form.reset();
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending…";
+      note.style.color = "";
+      note.textContent = "";
+
+      var data = new FormData(form);
+
+      fetch(form.action, {
+        method: "POST",
+        body: data,
+        headers: { "Accept": "application/json" }
+      })
+      .then(function(res){
+        if (res.ok){
+          note.textContent = "Thanks — your message has been sent. I'll get back to you soon.";
+          form.reset();
+        } else {
+          throw new Error("Request failed");
+        }
+      })
+      .catch(function(){
+        note.style.color = "#d86a4c";
+        note.textContent = "Something went wrong sending that. Please try again, or email contact@dipankarmohanta.com directly.";
+      })
+      .finally(function(){
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Send message";
+      });
     });
   }
 
